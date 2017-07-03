@@ -7,12 +7,14 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Button sendBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button sendBtn = (Button) findViewById(R.id.btn_mainActivity_send);
+        sendBtn = (Button) findViewById(R.id.btn_mainActivity_send);
         sendBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -23,5 +25,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void onClickSendBtn() {
         NotificationHelper.send(this, "訊息:", "有內鬼終止交易");
+        sendBtn.setText("QQ");
     }
 }
